@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ProjectCard from "@/components/ui/ProjectCard";
+import ProjectModal from "@/components/ui/ProjectModal";
 
 export type Project = {
   title: string;
@@ -14,27 +16,68 @@ export type Project = {
   liveUrl?: string;
   repoUrl?: string;
   imageUrl?: string;
+  images?: string[];
 };
 
 const projects: Project[] = [
   {
     title: "CCS-Select",
     company: "University Project",
-    year: "2023",
+    year: "2022 - 2023",
     description:
       "A webscraping platform tailored for university IT/CS students. It consolidates job postings and features a matching algorithm to align student profiles with employer skill requirements, displaying the highest percentage matches.",
     tags: ["Laravel", "Bootstrap", "HTML/CSS", "JavaScript", "Web Scraping"],
     isPrivate: false,
+    images: [
+      "/projects/ccs-select/1.png",
+      "/projects/ccs-select/2.png",
+      "/projects/ccs-select/3.png",
+      "/projects/ccs-select/4.png",
+    ],
   },
   {
     title: "Ketamine Center of Connecticut",
     company: "Freelance",
-    year: "Recent",
+    year: "2023",
     description:
       "Completely modernized a legacy clinic website by introducing new UX/UI designs, implementing SEO best practices, and building a responsive frontend. Developed the first phase independently and deployed the final product.",
-    tags: ["React", "Next.js", "UI/UX", "SEO", "Frontend"],
+    tags: ["React", "Next", "UI/UX", "SEO"],
     isPrivate: false,
     liveUrl: "https://www.ketaminecenterofct.com",
+    images: [
+      "/projects/ketamine-clinic/1.png",
+      "/projects/ketamine-clinic/2.png",
+      "/projects/ketamine-clinic/3.png",
+      "/projects/ketamine-clinic/4.png",
+      "/projects/ketamine-clinic/5.png",
+    ],
+  },
+  {
+    title: "brüno - Video Recording & Messaging App",
+    company: "Lanex Corporation",
+    year: "2024",
+    description:
+      "Developed web features and browser extension components for a video recording application. Enabled seamless video uploads, stream playback, and messaging capabilities for users.",
+    tags: ["Vue", "Python", "Browser Extensions", "Video Streaming"],
+    isPrivate: false,
+    images: [
+      "/projects/bruno/1.png",
+      "/projects/bruno/2.png",
+      "/projects/bruno/3.png",
+    ],
+  },
+  {
+    title: "Lanex Corp Website",
+    company: "Lanex Corporation",
+    year: "2023",
+    description:
+      "Maintained and expanded the primary company website. Engineered new features and updated promotional content to enhance the agency's digital presence.",
+    tags: ["WordPress", "PHP", "HTML/CSS", "JavaScript"],
+    isPrivate: false,
+    liveUrl: "https://www.lanexcorp.com",
+    images: [
+      "/projects/lanexcorp/1.png",
+    ],
   },
   {
     title: "HRIS Platform",
@@ -42,11 +85,11 @@ const projects: Project[] = [
     year: "2023",
     description:
       "Internal Human Resource Information System for PH and JP employees. Managed time in/out, project lists, client details, and employee summaries. Added new features, fixed bugs, and improved existing functionalities.",
-    tags: ["Laravel", "PHP", "AngularJS", "PostgreSQL"],
+    tags: ["Laravel", "PHP", "Angular", "PostgreSQL"],
     isPrivate: true,
   },
   {
-    title: "Nexco Shisetsu Hozen",
+    title: "Nexco ******* *****",
     company: "Lanex Corporation",
     year: "2023 – 2025",
     description:
@@ -55,7 +98,7 @@ const projects: Project[] = [
     isPrivate: true,
   },
   {
-    title: "Nexco Chiteki Zaisan",
+    title: "Nexco *************",
     company: "Lanex Corporation",
     year: "2024 – 2025",
     description:
@@ -64,39 +107,30 @@ const projects: Project[] = [
     isPrivate: true,
   },
   {
-    title: "brüno - Video Recording & Messaging App",
-    company: "Lanex Corporation",
-    year: "2024",
-    description:
-      "Developed web features and browser extension components for a video recording application. Enabled seamless video uploads, stream playback, and messaging capabilities for users.",
-    tags: ["VueJS", "Python", "Browser Extensions", "Video Streaming"],
-    isPrivate: true,
-  },
-  {
-    title: "PPIH (Don Quijote related)",
+    title: "***** (Don Quijote)",
     company: "Lanex Corporation",
     year: "2025",
     description:
       "Developed comprehensive admin and client-side interfaces. Empowered administrators to manage product catalogs while providing a streamlined browsing and purchasing experience for end users.",
-    tags: ["React", "NextJS", "Laravel", "TypeScript", "E-commerce"],
+    tags: ["React", "Next", "Laravel", "TypeScript", "E-commerce"],
     isPrivate: true,
   },
   {
-    title: "Nissin Kouhatsu",
+    title: "Nissin ******",
     company: "Lanex Corporation",
     year: "2025",
     description:
       "Internal website built for a Japanese company requiring complicated calculations and inventory management for various manufacturing materials.",
-    tags: ["Vue", "NuxtJS", "Laravel", "TypeScript", "E-commerce"],
+    tags: ["Vue", "Nuxt", "Laravel", "TypeScript", "E-commerce"],
     isPrivate: true,
   },
-  {
-    title: "Lanex Core & AU Websites",
+   {
+    title: "***** Chatbot",
     company: "Lanex Corporation",
-    year: "2023",
+    year: "2024",
     description:
-      "Maintained and expanded the primary company websites. Engineered new features and consistently updated promotional content to enhance the agency's digital presence.",
-    tags: ["WordPress", "PHP", "HTML/CSS", "JavaScript"],
+      "An AI-driven platform that automates data entry by scanning and extracting information from uploaded receipts using OCR. Features a custom AI chatbot for user assistance and a synchronization engine that integrates real-time data from corporate APIs.",
+    tags: ["AI", "OCR", "Chatbot", "API Integration", "Data Sync", "Laravel", "Vue"],
     isPrivate: true,
   },
 ];
@@ -112,8 +146,10 @@ const cardVariant: Variants = {
 };
 
 export default function Projects() {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
   return (
-    <section id="projects" className="py-28 px-6">
+    <section id="projects" className="py-28 px-6 relative">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -133,11 +169,18 @@ export default function Projects() {
         >
           {projects.map((project, i) => (
             <motion.div key={i} variants={cardVariant}>
-              <ProjectCard project={project} />
+              <ProjectCard project={project} onClick={() => setSelectedProject(project)} />
             </motion.div>
           ))}
         </motion.div>
       </div>
+
+      {selectedProject && (
+        <ProjectModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </section>
   );
 }

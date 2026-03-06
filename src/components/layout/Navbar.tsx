@@ -28,13 +28,13 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={clsx(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
         scrolled
-          ? "bg-[var(--background)]/80 backdrop-blur-md border-b border-[var(--border)]"
-          : "bg-transparent"
+          ? "bg-[var(--background)]/80 backdrop-blur-md border-[var(--border)]"
+          : "bg-transparent border-transparent"
       )}
     >
-      <nav className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <nav className="max-w-5xl mx-auto  py-4 flex items-center justify-between">
         {/* Logo */}
         <a
           href="#hero"

@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="border-t border-[var(--border)] py-8 mt-16">
       <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-[var(--muted)] text-sm">
-          © {new Date().getFullYear()} Ed Kenneth Garate. Built with Next.js & Tailwind CSS.
+          © {new Date().getFullYear()} Ed Kenneth. Built with Next.js & Tailwind CSS.
         </p>
         <div className="flex items-center gap-4">
           <a

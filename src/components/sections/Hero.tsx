@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
+import { motion, useScroll, useTransform, type Variants } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -51,6 +51,9 @@ const fadeUp: Variants = {
 };
 
 export default function Hero() {
+  const { scrollY } = useScroll();
+  const scrollOpacity = useTransform(scrollY, [0, 150], [1, 0]);
+
   return (
     <section
       id="hero"
@@ -132,18 +135,22 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator container for initial fade-in */}
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--muted)]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.6 }}
       >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-        >
-          <ArrowDown size={18} />
+        {/* Scroll-based fade out wrapper */}
+        <motion.div style={{ opacity: scrollOpacity }}>
+          {/* Continuous bouncing animation */}
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+          >
+            <ArrowDown size={18} />
+          </motion.div>
         </motion.div>
       </motion.div>
     </section>

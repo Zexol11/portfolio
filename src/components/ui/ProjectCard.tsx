@@ -3,20 +3,24 @@ import Tag from "@/components/ui/Tag";
 import type { Project } from "@/components/sections/Projects";
 import clsx from "clsx";
 
-export default function ProjectCard({ project }: { project: Project }) {
-  const { title, company, year, description, tags, isPrivate, liveUrl, repoUrl, imageUrl } = project;
+export default function ProjectCard({ project, onClick }: { project: Project; onClick?: () => void }) {
+  const { title, company, year, description, tags, isPrivate, liveUrl, repoUrl, imageUrl, images } = project;
+
+  const displayImage = imageUrl || (images && images.length > 0 ? images[0] : null);
 
   return (
     <div
+      onClick={onClick}
       className={clsx(
         "group flex flex-col h-full rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden",
-        "hover:border-[var(--accent)] transition-all duration-300"
+        "hover:border-[var(--accent)] transition-all duration-300",
+        onClick && "cursor-pointer"
       )}
     >
       {/* Image Preview */}
       <div className="w-full aspect-video bg-[var(--surface-alt)] overflow-hidden border-b border-[var(--border)] shrink-0">
         <img
-          src={imageUrl || `https://placehold.co/600x400/1a1a1a/888888?text=${encodeURIComponent(title)}`}
+          src={displayImage || `https://placehold.co/600x400/1a1a1a/888888?text=${encodeURIComponent(title)}`}
           alt={`${title} preview`}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />

@@ -4,17 +4,28 @@ import type { Project } from "@/components/sections/Projects";
 import clsx from "clsx";
 
 export default function ProjectCard({ project }: { project: Project }) {
-  const { title, company, year, description, tags, isPrivate, liveUrl, repoUrl } = project;
+  const { title, company, year, description, tags, isPrivate, liveUrl, repoUrl, imageUrl } = project;
 
   return (
     <div
       className={clsx(
-        "group flex flex-col h-full rounded-xl border border-[var(--border)] bg-[var(--surface)]",
-        "p-5 hover:border-[var(--accent)] transition-all duration-300"
+        "group flex flex-col h-full rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden",
+        "hover:border-[var(--accent)] transition-all duration-300"
       )}
     >
-      {/* Header */}
-      <div className="flex items-start justify-between gap-2 mb-3">
+      {/* Image Preview */}
+      <div className="w-full aspect-video bg-[var(--surface-alt)] overflow-hidden border-b border-[var(--border)] shrink-0">
+        <img
+          src={imageUrl || `https://placehold.co/600x400/1a1a1a/888888?text=${encodeURIComponent(title)}`}
+          alt={`${title} preview`}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="p-5 flex flex-col flex-1">
+        {/* Header */}
+        <div className="flex items-start justify-between gap-2 mb-3">
         <div>
           <h3 className="text-[var(--foreground)] font-semibold text-sm leading-snug">
             {title}
@@ -75,6 +86,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         {tags.map((tag) => (
           <Tag key={tag} label={tag} />
         ))}
+      </div>
       </div>
     </div>
   );

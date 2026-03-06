@@ -17,7 +17,7 @@ export default function Footer() {
             <Mail size={18} />
           </a>
           <a
-            href="https://github.com/edkenneth"
+            href="https://github.com/Zexol11"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
@@ -26,7 +26,7 @@ export default function Footer() {
             <GithubIcon width={18} height={18} />
           </a>
           <a
-            href="https://linkedin.com/in/edkenneth"
+            href="https://www.linkedin.com/in/ed-kenneth-g"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"

@@ -6,8 +6,7 @@ import { useEffect, useState } from "react";
 
 const roles = [
   "Full-Stack Software Engineer",
-  "UI/UX",
-  "Enterprise App Builder",
+  "UI/UX Designer",
 ];
 
 function Typewriter({ words }: { words: string[] }) {
@@ -111,8 +110,8 @@ export default function Hero() {
           variants={fadeUp}
           className="text-[var(--muted)] text-base sm:text-lg max-w-xl mx-auto leading-relaxed mb-10"
         >
-          Full-Stack Software Engineer with 3+ years building enterprise web applications
-          for 50–1000+ users. Specialized in different frameworks.
+          Full-Stack Developer with 3+ years’ experience creating functional, reliable web tools for groups ranging from small teams to 1,000+ active users. 
+          Specialist in adapting to different tech stacks to meet project needs.
         </motion.p>
 
         <motion.div variants={fadeUp} className="flex items-center justify-center gap-4">

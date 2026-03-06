@@ -17,11 +17,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Ed Kenneth Garate — Full-Stack Software Engineer",
   description:
-    "Portfolio of Ed Kenneth Garate, a Full-Stack Software Engineer with 3+ years building enterprise web applications with React, ASP.NET, and TypeScript.",
+    "Full-Stack Software Engineer with 3+ years of experience building scalable web applications with React, ASP.NET, and TypeScript.",
   keywords: ["full-stack", "software engineer", "portfolio", "react", "nextjs", "asp.net", "typescript"],
   openGraph: {
     title: "Ed Kenneth Garate — Full-Stack Software Engineer",
-    description: "3+ years building enterprise web apps with React, ASP.NET, and TypeScript.",
+description: "3+ years building scalable web apps with React, ASP.NET, and TypeScript.",
     type: "website",
   },
 };

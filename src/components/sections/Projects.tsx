@@ -13,6 +13,7 @@ export type Project = {
   isPrivate?: boolean;
   liveUrl?: string;
   repoUrl?: string;
+  imageUrl?: string;
 };
 
 const projects: Project[] = [
@@ -86,7 +87,7 @@ const projects: Project[] = [
     year: "2025",
     description:
       "Internal website built for a Japanese company requiring complicated calculations and inventory management for various manufacturing materials.",
-    tags: ["React", "NuxtJS", "Laravel", "TypeScript", "E-commerce"],
+    tags: ["Vue", "NuxtJS", "Laravel", "TypeScript", "E-commerce"],
     isPrivate: true,
   },
   {

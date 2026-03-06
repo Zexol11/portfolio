@@ -7,6 +7,7 @@ type Props = {
   label: string;
   icon?: ReactNode;
   external?: boolean;
+  download?: string | boolean;
   variant?: "ghost" | "solid";
 };
 
@@ -16,6 +17,7 @@ export default function SocialLink({
   label,
   icon,
   external,
+  download,
   variant = "ghost",
 }: Props) {
   return (
@@ -24,6 +26,7 @@ export default function SocialLink({
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
+      download={download}
       className={clsx(
         "inline-flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-lg border transition-all duration-200",
         variant === "ghost"

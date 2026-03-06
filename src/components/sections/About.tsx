@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { Mail, ExternalLink } from "lucide-react";
+import { Mail, ExternalLink, Download } from "lucide-react";
 import SectionTitle from "@/components/ui/SectionTitle";
 import SocialLink from "@/components/ui/SocialLink";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/icons";
@@ -53,14 +53,14 @@ export default function About() {
               />
               <SocialLink
                 id="about-linkedin"
-                href="https://linkedin.com/in/edkenneth"
+                href="https://www.linkedin.com/in/ed-kenneth-g"
                 label="LinkedIn"
                 icon={<LinkedinIcon width={15} height={15} />}
                 external
               />
               <SocialLink
                 id="about-github"
-                href="https://github.com/edkenneth"
+                href="https://github.com/Zexol11"
                 label="GitHub"
                 icon={<GithubIcon width={15} height={15} />}
                 external
@@ -69,8 +69,8 @@ export default function About() {
                 id="about-resume"
                 href="/resume.pdf"
                 label="Resume"
-                icon={<ExternalLink size={15} />}
-                external
+                icon={<Download size={15} />}
+                download="Ed_Kenneth_Garate_Resume.pdf"
               />
             </div>
           </motion.div>
@@ -86,8 +86,7 @@ export default function About() {
             {[
               { label: "Based in", value: "Philippines 🇵🇭" },
               { label: "Experience", value: "3+ Years" },
-              { label: "Focus", value: "Full-Stack / Enterprise Apps" },
-              { label: "Education", value: "BS Computer Science, UC 2023" },
+              { label: "Education", value: "BS Information Technology, UCLM" },
               { label: "Status", value: "Open to opportunities ✅" },
             ].map((item) => (
               <div

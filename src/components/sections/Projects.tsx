@@ -53,7 +53,7 @@ const projects: Project[] = [
     ],
   },
   {
-    title: "brüno - Video Recording & Messaging App",
+    title: "brüno - Video Recording App",
     company: "Lanex Corporation",
     year: "2024",
     description:

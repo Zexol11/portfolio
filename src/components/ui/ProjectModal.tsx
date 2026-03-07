@@ -9,6 +9,7 @@ type Props = {
   onClose: () => void;
 };
 
+//test comment
 export default function ProjectModal({ project, onClose }: Props) {
   const { title, company, year, description, tags, isPrivate, liveUrl, repoUrl, images, imageUrl } = project;
   

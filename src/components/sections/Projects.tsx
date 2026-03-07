@@ -107,7 +107,7 @@ const projects: Project[] = [
     isPrivate: true,
   },
   {
-    title: "***** (Don Quijote)",
+    title: "***** Don Quijote",
     company: "Lanex Corporation",
     year: "2025",
     description:

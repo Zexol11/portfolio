@@ -34,7 +34,7 @@ export default function Navbar() {
           : "bg-transparent border-transparent"
       )}
     >
-      <nav className="max-w-5xl mx-auto  py-4 flex items-center justify-between">
+      <nav className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <a
           href="#hero"

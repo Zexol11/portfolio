@@ -19,7 +19,7 @@ const skillGroups: SkillGroup[] = [
   },
   {
     category: "Backend",
-    skills: ["ASP.NET", "Laravel", "Express.js", "Node.js"],
+    skills: ["ASP.NET", "Laravel", "Express.js", "Node.js", "GraphQL"],
   },
   {
     category: "Databases",

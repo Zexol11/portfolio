@@ -34,6 +34,7 @@ export const metadata: Metadata = {
     "ASP.NET Core",
     "Web Development Portfolio",
     "Next.js Developer",
+    "Tailwind CSS",
   ],
   authors: [{ name: "Ed Kenneth", url: "https://edkenneth.vercel.app" }],
   creator: "Ed Kenneth",
@@ -70,7 +71,7 @@ export const metadata: Metadata = {
     title: "Ed Kenneth — Full-Stack Software Engineer",
     description: "Full-Stack Software Engineer with 3+ years of experience building scalable web applications.",
     images: ["/og-image.png"],
-    creator: "@edkenneth", // Placeholder
+    creator: "@edkenneth", 
   },
   icons: {
     icon: "/favicon.ico",

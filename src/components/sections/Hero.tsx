@@ -113,7 +113,7 @@ export default function Hero() {
           variants={fadeUp}
           className="text-[var(--muted)] text-base sm:text-lg max-w-xl mx-auto leading-relaxed mb-10"
         >
-          Full-Stack Software Engineer with 3+ years’ experience creating functional, reliable web tools for groups ranging from small teams to 1,000+ active users. 
+          Full-Stack Software Engineer with 3+ years’ experience creating functional, reliable business tools and internal web applications. 
           Specialist in adapting to different tech stacks to meet project needs.
         </motion.p>
 

@@ -15,7 +15,7 @@ const skillGroups: SkillGroup[] = [
   },
   {
     category: "Frontend",
-    skills: ["React", "Next.js", "Vue", "Angular", "Nuxt", "HTML / CSS", "Sass"],
+    skills: ["React", "Next.js", "Vue", "Angular", "Nuxt", "HTML/CSS", "Tailwind CSS", "Sass"],
   },
   {
     category: "Backend",

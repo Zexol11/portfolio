@@ -35,14 +35,12 @@ export default function About() {
           >
             <p className="text-[var(--muted)] leading-relaxed">
               I&apos;m a Full-Stack Software Engineer with 3+ years of experience
-              building and optimizing web applications serving 50–1000+ users.
+              building and optimizing business-critical web applications and internal company tools.
               I&apos;m strong in React, TypeScript, JavaScript, and Laravel, with a focus on
               frontend development while still capable of handling full-stack tasks.
             </p>
             <p className="text-[var(--muted)] leading-relaxed">
-              I have a proven track record of reducing API latency,
-              improving system reliability, and delivering complete features —
-              from requirements gathering to launch.
+              I have experience improving API performance, enhancing system reliability, and delivering features from planning to release.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
               <SocialLink

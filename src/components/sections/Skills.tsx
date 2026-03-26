@@ -3,35 +3,73 @@
 import { motion, type Variants } from "framer-motion";
 import SectionTitle from "@/components/ui/SectionTitle";
 
+type Skill = {
+  name: string;
+  level: number;
+};
+
 type SkillGroup = {
   category: string;
-  skills: string[];
+  skills: Skill[];
 };
 
 const skillGroups: SkillGroup[] = [
   {
     category: "Languages",
-    skills: ["JavaScript", "TypeScript", "C#", "PHP", "Python"],
+    skills: [
+      { name: "JavaScript", level: 4 },
+      { name: "TypeScript", level: 4 },
+      { name: "C#", level: 3 },
+      { name: "PHP", level: 4 },
+      { name: "Python", level: 2 },
+    ],
   },
   {
     category: "Frontend",
-    skills: ["React", "Next.js", "Vue", "Angular", "Nuxt", "HTML/CSS", "Tailwind CSS", "Sass"],
+    skills: [
+      { name: "React", level: 4 },
+      { name: "Next.js", level: 4 },
+      { name: "Vue", level: 4 },
+      { name: "Angular", level: 2 },
+      { name: "Nuxt", level: 3 },
+      { name: "HTML/CSS", level: 5 },
+      { name: "Tailwind CSS", level: 4 },
+      { name: "Sass", level: 4 },
+    ],
   },
   {
     category: "Backend",
-    skills: ["ASP.NET", "Laravel", "Express.js", "Node.js", "GraphQL"],
+    skills: [
+      { name: "ASP.NET", level: 3 },
+      { name: "Laravel", level: 4 },
+      { name: "Express.js", level: 2 },
+      { name: "Node.js", level: 3 },
+      { name: "GraphQL", level: 3 },
+    ],
   },
   {
     category: "Databases",
-    skills: ["SQL Server", "PostgreSQL"],
+    skills: [
+      { name: "SQL Server", level: 4 },
+      { name: "PostgreSQL", level: 4 },
+    ],
   },
   {
     category: "Tools & DevOps",
-    skills: ["Git", "Docker", "Postman", "Figma"],
+    skills: [
+      { name: "Git", level: 4 },
+      { name: "Docker", level: 3 },
+      { name: "Postman", level: 4 },
+      { name: "Figma", level: 4 },
+      { name: "Jira", level: 3 },
+    ],
   },
   {
     category: "Cloud",
-    skills: ["AWS (Basic)", "Azure (Basic)"],
+    skills: [
+      { name: "AWS", level: 2 },
+      { name: "Azure", level: 1 },
+    ],
   },
 ];
 
@@ -72,7 +110,7 @@ export default function Skills() {
                 {group.category}
               </h3>
               <motion.ul
-                className="flex flex-col gap-2"
+                className="flex flex-col gap-3"
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
@@ -80,12 +118,26 @@ export default function Skills() {
               >
                 {group.skills.map((skill) => (
                   <motion.li
-                    key={skill}
+                    key={skill.name}
                     variants={itemVariant}
-                    className="text-sm text-[var(--muted)] flex items-center gap-2"
+                    className="flex items-center justify-between text-sm text-[var(--muted)]"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] inline-block shrink-0" />
-                    {skill}
+                    <span className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] inline-block shrink-0" />
+                      {skill.name}
+                    </span>
+                    <div className="flex gap-1 w-16">
+                      {[1, 2, 3, 4, 5].map((level) => (
+                        <div
+                          key={level}
+                          className={`h-1.5 flex-1 rounded-sm ${
+                            level <= skill.level
+                              ? "bg-[var(--accent)]"
+                              : "bg-[var(--border)] opacity-40"
+                          }`}
+                        />
+                      ))}
+                    </div>
                   </motion.li>
                 ))}
               </motion.ul>

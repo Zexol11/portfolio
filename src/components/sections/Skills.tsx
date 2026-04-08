@@ -52,6 +52,7 @@ const skillGroups: SkillGroup[] = [
     skills: [
       { name: "SQL Server", level: 4 },
       { name: "PostgreSQL", level: 4 },
+      { name: "Supabase", level: 3 },
     ],
   },
   {
@@ -62,6 +63,8 @@ const skillGroups: SkillGroup[] = [
       { name: "Postman", level: 4 },
       { name: "Figma", level: 4 },
       { name: "Jira", level: 3 },
+      { name: "Jest", level: 3 },
+      { name: "Playwright", level: 3 },
     ],
   },
   {
@@ -69,6 +72,8 @@ const skillGroups: SkillGroup[] = [
     skills: [
       { name: "AWS", level: 2 },
       { name: "Azure", level: 1 },
+      { name: "Vercel", level: 4 },
+      { name: "Render", level: 3 },
     ],
   },
 ];

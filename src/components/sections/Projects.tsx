@@ -25,7 +25,7 @@ const projects: Project[] = [
     company: "Personal Project",
     year: "2026",
     description:
-      "Developed a high-performance monorepo application to master full-stack architecture and modern CI/CD workflows. Built with a Laravel 12 API and a Next.js 15 frontend, the project served as a playground for implementing engineering standards, including automated E2E testing with Playwright, Sanctum-based authentication, and an independent deployment strategy via Vercel and Render.",
+      "A personal full-stack application built to explore modern monorepo development and CI/CD workflows. Built with a Laravel 12 API and a Next.js 15 frontend, the project served as a playground for implementing engineering standards, including automated E2E testing with Playwright, Sanctum-based authentication, and an independent deployment strategy via Vercel and Render.",
     tags: ["Next", "Laravel", "E2E Testing", "PostgreSQL", "Tailwind CSS", "Supabase", "Render", "Vercel"],
     isPrivate: false,
     liveUrl: "https://jinsei.vercel.app",

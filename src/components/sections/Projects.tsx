@@ -21,7 +21,7 @@ export type Project = {
 
 const projects: Project[] = [
   {
-    title: "Jinsei — Personal Journaling App",
+    title: "jinsei — Personal Journaling App",
     company: "Personal Project",
     year: "2026",
     description:
@@ -37,7 +37,6 @@ const projects: Project[] = [
       "/projects/jinsei/5.png",
       "/projects/jinsei/6.png",
       "/projects/jinsei/7.png",
-      "/projects/jinsei/8.png", 
     ],
   },
   {

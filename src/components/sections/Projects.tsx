@@ -21,6 +21,26 @@ export type Project = {
 
 const projects: Project[] = [
   {
+    title: "Jinsei — Personal Journaling App",
+    company: "Personal Project",
+    year: "2026",
+    description:
+      "Developed a high-performance monorepo application to master full-stack architecture and modern CI/CD workflows. Built with a Laravel 12 API and a Next.js 15 frontend, the project served as a playground for implementing engineering standards, including automated E2E testing with Playwright, Sanctum-based authentication, and an independent deployment strategy via Vercel and Render.",
+    tags: ["Next", "Laravel", "E2E Testing", "PostgreSQL", "Tailwind CSS", "Supabase", "Render", "Vercel"],
+    isPrivate: false,
+    liveUrl: "https://jinsei.vercel.app",
+    images: [
+      "/projects/jinsei/1.png",
+      "/projects/jinsei/2.png",
+      "/projects/jinsei/3.png",
+      "/projects/jinsei/4.png",
+      "/projects/jinsei/5.png",
+      "/projects/jinsei/6.png",
+      "/projects/jinsei/7.png",
+      "/projects/jinsei/8.png", 
+    ],
+  },
+  {
     title: "CCS-Select",
     company: "University Project",
     year: "2022 - 2023",

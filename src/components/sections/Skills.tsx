@@ -61,6 +61,7 @@ const skillGroups: SkillGroup[] = [
       { name: "Git", level: 4 },
       { name: "Docker", level: 3 },
       { name: "Postman", level: 4 },
+      { name: "Axios", level: 3 },
       { name: "Figma", level: 4 },
       { name: "Jira", level: 3 },
       { name: "Jest", level: 3 },

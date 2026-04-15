@@ -29,7 +29,7 @@ const skillGroups: SkillGroup[] = [
     skills: [
       { name: "React", level: 4 },
       { name: "Next.js", level: 4 },
-      { name: "Vue", level: 4 },
+      { name: "Vue", level: 3 },
       { name: "Angular", level: 2 },
       { name: "Nuxt", level: 3 },
       { name: "HTML/CSS", level: 5 },

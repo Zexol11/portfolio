@@ -35,6 +35,10 @@ const skillGroups: SkillGroup[] = [
       { name: "HTML/CSS", level: 5 },
       { name: "Tailwind CSS", level: 4 },
       { name: "Sass", level: 4 },
+      { name: "Ant Design", level: 3 },
+      { name: "Nuxt UI", level: 3 },
+      { name: "PrimeVue", level: 3 },
+      { name: "Mantine", level: 3 },
     ],
   },
   {

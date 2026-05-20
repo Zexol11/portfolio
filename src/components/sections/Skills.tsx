@@ -70,6 +70,7 @@ const skillGroups: SkillGroup[] = [
       { name: "Jira", level: 3 },
       { name: "Jest", level: 3 },
       { name: "Playwright", level: 3 },
+      { name: "n8n", level: 4 },
     ],
   },
   {

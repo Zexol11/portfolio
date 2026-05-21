@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 const roles = [
   "Full-Stack Software Engineer",
   "UI/UX Designer",
+  "Automation Engineer",
 ];
 
 function Typewriter({ words }: { words: string[] }) {
